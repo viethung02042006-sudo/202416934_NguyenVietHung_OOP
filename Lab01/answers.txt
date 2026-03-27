@@ -1,0 +1,8 @@
+6.1
+Câu 1: Điều gì xảy ra nếu chọn "Cancel"?
+	Chương trình sẽ hiển thị "You've chosen: No". Vì giá trị trả về khi chọn Cancel không bằng với giá trị của JOptionPane.YES_OPTION, nên chưng trình sẽ trả về kết quả là "No".
+
+Câu hỏi 2: Làm thế nào để tùy chỉnh các lựa chọn, ví dụ chỉ có hai lựa chọn "Yes" và "No"?
+	Ta có thể sử dụng hàm showConfirmDialog với tham số optionType là JOptionPane.YES_NO_OPTION. 
+	
+	Ví dụ: int option = JOptionPane.showConfirmDialog(null, "Message", "Tiêu đề", JOptionPane.YES_NO_OPTION);
