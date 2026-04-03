@@ -1,0 +1,12 @@
+Question: If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
+Dịch:Nếu bạn tạo một hàm khởi tạo (constructor) để tạo DVD bằng tiêu đề (title), sau đó lại tạo một hàm khởi tạo khác để tạo DVD bằng danh mục (category). JAVA có cho phép bạn làm điều này không?
+
+Answer:KHÔNG. Java không cho phép bạn làm điều này.
+
+Giải thích: 
+1. Trong Java, việc nạp chồng hàm (Method Overloading) dựa trên kiểu dữ liệu của các tham số truyền vào chứ không dựa trên tên tham số.
+2. Cả "title" và "category" đều có kiểu dữ liệu là String. 
+3. Nếu bạn tạo hai hàm khởi tạo cùng chỉ nhận vào một tham số kiểu String, ví dụ:
+   - Digital Videodisc(String title)
+   - Digital Videodisc(String category)
+   Hệ thống sẽ báo lỗi "Duplicate method" (trùng lặp phương thức) vì Java không thể phân biệt được bạn đang muốn gọi hàm nào khi bạn truyền vào một chuỗi String.
