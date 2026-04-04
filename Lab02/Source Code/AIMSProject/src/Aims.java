@@ -1,29 +1,29 @@
 public class Aims {
     public static void main(String[] args) {
-        // Tạo một giỏ hàng mới (Create a new cart)
+        // 1. Khởi tạo giỏ hàng
         Cart anOrder = new Cart();
 
-        // Tạo các đối tượng DVD và thêm chúng vào giỏ hàng
-        // Create new dvd objects and add them to the cart
+        // 2. Tạo các DVD mẫu
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin", "Animation", 18.99f);
 
-        // DVD 1: The Lion King
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King",
-                "Animation", "Roger Allers", 87, 19.95f);
+        // 3. Thêm đĩa vào giỏ (Phần 9 & 10)
         anOrder.addDigitalVideoDisc(dvd1);
-
-        // DVD 2: Star Wars
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars",
-                "Science Fiction", "George Lucas", 87, 24.95f);
         anOrder.addDigitalVideoDisc(dvd2);
-
-        // DVD 3: Aladdin
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin",
-                "Animation", 18.99f);
         anOrder.addDigitalVideoDisc(dvd3);
 
-        // In tổng chi phí của các mặt hàng trong giỏ hàng
-        // Print total cost of the items in the cart
-        System.out.println("Total Cost is: ");
-        System.out.println(anOrder.totalCost());
+        // 4. In tổng tiền trước khi xóa
+        System.out.println("Total Cost before removal is: " + anOrder.totalCost());
+
+        // 5. Thực hiện XÓA đĩa (Phần 11)
+        // Chúng ta sẽ thử xóa đĩa Star Wars (dvd2)
+        anOrder.removeDigitalVideoDisc(dvd2);
+
+        // 6. Kiểm tra lại tổng tiền sau khi xóa (Phải còn 38.94)
+        System.out.println("Total Cost after removal is: " + anOrder.totalCost());
+
+        // 7. Thử xóa một đĩa không tồn tại để kiểm tra thông báo lỗi
+        anOrder.removeDigitalVideoDisc(dvd2);
     }
 }
