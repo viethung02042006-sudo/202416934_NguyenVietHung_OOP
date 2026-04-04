@@ -1,17 +1,29 @@
 public class Aims {
     public static void main(String[] args) {
-        // Chạy thử hàm khởi tạo số 1 (chỉ có title)
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("Interstella");
+        // 1. Tạo một giỏ hàng mới
+        Cart anOrder = new Cart();
 
-        // Chạy thử hàm khởi tạo số 2 (category, title, cost)
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Animation", "Aladdin", 18.99f);
+        // 2. Tạo các đối tượng DVD mới và thêm vào giỏ hàng
+        // Sử dụng các Constructor khác nhau đã học ở phần 8
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King",
+                "Animation", "Roger Allers", 87, 19.95f);
+        anOrder.addDigitalVideoDisc(dvd1);
 
-        // Chạy thử hàm khởi tạo số 4 (đầy đủ thông tin)
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Star Wars", "Sci-fi", "George Lucas", 124, 24.95f);
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars",
+                "Science Fiction", "George Lucas", 124, 24.95f);
+        anOrder.addDigitalVideoDisc(dvd2);
 
-        // In thử ra màn hình để kiểm tra
-        System.out.println("DVD 1 Title: " + dvd1.getTitle());
-        System.out.println("DVD 2 Title: " + dvd2.getTitle() + " - Cost: " + dvd2.getCost());
-        System.out.println("DVD 3 Director: " + dvd3.getDirector());
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin",
+                "Animation", 18.99f);
+        anOrder.addDigitalVideoDisc(dvd3);
+
+        // 3. In tổng chi phí của các mặt hàng trong giỏ hàng
+        System.out.print("Total Cost is: ");
+        System.out.println(anOrder.totalCost());
+
+        // 4. Thử nghiệm phương thức xóa đĩa khỏi giỏ hàng
+        // Sau khi xóa dvd2, tổng tiền phải giảm đi 24.95
+        anOrder.removeDigitalVideoDisc(dvd2);
+        System.out.println("Total Cost after removal: " + anOrder.totalCost());
     }
 }
