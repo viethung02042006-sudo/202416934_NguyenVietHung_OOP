@@ -51,4 +51,27 @@ public class Cart {
         }
         return total;
     }
+
+    //PHẦN BAIF LÀM CỦA LAB03
+// 2.1. Nạp chồng phương thức nhận vào danh sách (Mảng) DVD
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        for (DigitalVideoDisc disc : dvdList) {
+            if (qtyOrdered < MAX_NUMBERS_ORDERED) {
+                addDigitalVideoDisc(disc); // Tận dụng lại hàm thêm 1 đĩa đã có
+            } else {
+                System.out.println("The cart is almost full");
+                break;
+            }
+        }
+    }
+
+    // 2.2. Nạp chồng phương thức nhận vào 2 đĩa DVD rời nhau
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        if (qtyOrdered + 2 <= MAX_NUMBERS_ORDERED) {
+            addDigitalVideoDisc(dvd1);
+            addDigitalVideoDisc(dvd2);
+        } else {
+            System.out.println("The cart is almost full");
+        }
+    }
 }
