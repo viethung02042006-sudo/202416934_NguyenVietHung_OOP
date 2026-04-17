@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cbb9b7b-4a5a-49a9-8e23-f36ecb6df216" name="Changes" comment="Refactor: finalize project structure before merging to master HOAN THANH PHAN 1" />
+    <list default="true" id="6cbb9b7b-4a5a-49a9-8e23-f36ecb6df216" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Answer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Answer.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +50,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "release/lab03",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/OOP THUC HANH/202416934_NguyenVietHung",
     "project.structure.last.edited": "Modules",
