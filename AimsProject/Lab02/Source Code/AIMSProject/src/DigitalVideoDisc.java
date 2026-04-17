@@ -69,7 +69,9 @@ public class DigitalVideoDisc {
         return length;
     }
 
-    public float getCost()
+    public float getCost() {
+        return cost;
+    }
 
     public void setTitle(String title) {
         this.title = title;
@@ -82,5 +84,16 @@ public class DigitalVideoDisc {
     // Getter để lấy tổng số đĩa hiện có (dùng static vì nó là biến chung của lớp)
     public static int getNbDigitalVideoDiscs() {
         return nbDigitalVideoDiscs;
+    }
+    //PHẦN 6 LAB03
+    // Hàm trả về chuỗi thông tin định dạng sẵn
+    @Override
+    public String toString() {
+        return "DVD - " + title + " - " + category + " - " + director + " - " + length + ": " + cost + " $";
+    }
+
+    // Hàm kiểm tra tiêu đề có khớp không
+    public boolean isMatch(String title) {
+        return this.title.equals(title);
     }
 }

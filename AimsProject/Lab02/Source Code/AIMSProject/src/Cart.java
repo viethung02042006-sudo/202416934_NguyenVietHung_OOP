@@ -3,24 +3,42 @@ public class Cart {
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
     private int qtyOrdered = 0;
 
-    // Thêm DVD vào giỏ hàng
+    // 1. Thêm 1 đĩa đơn lẻ
     public void addDigitalVideoDisc(DigitalVideoDisc disc) {
         if (qtyOrdered < MAX_NUMBERS_ORDERED) {
             itemsOrdered[qtyOrdered] = disc;
             qtyOrdered++;
             System.out.println("The disc has been added");
-
-            // Nếu sau khi thêm mà giỏ hàng chạm mốc 20
-            if (qtyOrdered == MAX_NUMBERS_ORDERED) {
-                System.out.println("The cart is almost full");
-            }
         } else {
-            // Nếu giỏ hàng đã đầy (>= 20)
             System.out.println("The cart is almost full");
         }
     }
 
-    // Xóa DVD khỏi giỏ hàng
+    // 2. Nạp chồng: Thêm một danh sách (Mảng)
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        for (DigitalVideoDisc disc : dvdList) {
+            if (qtyOrdered < MAX_NUMBERS_ORDERED) {
+                itemsOrdered[qtyOrdered] = disc;
+                qtyOrdered++;
+            } else {
+                System.out.println("The cart is almost full. Cannot add: " + disc.getTitle());
+                break;
+            }
+        }
+        System.out.println("The DVD list has been added");
+    }
+
+    // 3. Nạp chồng: Thêm 2 đĩa rời
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        if (qtyOrdered + 2 <= MAX_NUMBERS_ORDERED) {
+            addDigitalVideoDisc(dvd1);
+            addDigitalVideoDisc(dvd2);
+        } else {
+            System.out.println("The cart is almost full");
+        }
+    }
+
+    // 4. Xóa đĩa (Hàm này giúp sửa lỗi ở file Aims.java của bạn)
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
         int indexFound = -1;
         for (int i = 0; i < qtyOrdered; i++) {
@@ -31,11 +49,10 @@ public class Cart {
         }
 
         if (indexFound != -1) {
-            // Dịch chuyển các phần tử phía sau lên trước
             for (int i = indexFound; i < qtyOrdered - 1; i++) {
                 itemsOrdered[i] = itemsOrdered[i + 1];
             }
-            itemsOrdered[qtyOrdered - 1] = null; // Xóa tham chiếu cuối cùng
+            itemsOrdered[qtyOrdered - 1] = null;
             qtyOrdered--;
             System.out.println("The disc has been removed");
         } else {
@@ -43,7 +60,7 @@ public class Cart {
         }
     }
 
-    // Tính tổng tiền các DVD trong giỏ
+    // 5. Tính tổng tiền
     public float totalCost() {
         float total = 0;
         for (int i = 0; i < qtyOrdered; i++) {
@@ -52,26 +69,39 @@ public class Cart {
         return total;
     }
 
-    //PHẦN BAIF LÀM CỦA LAB03
-// 2.1. Nạp chồng phương thức nhận vào danh sách (Mảng) DVD
-    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
-        for (DigitalVideoDisc disc : dvdList) {
-            if (qtyOrdered < MAX_NUMBERS_ORDERED) {
-                addDigitalVideoDisc(disc); // Tận dụng lại hàm thêm 1 đĩa đã có
-            } else {
-                System.out.println("The cart is almost full");
+    // 6. In giỏ hàng (Phần 6 Lab 03)
+    public void print() {
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        for (int i = 0; i < qtyOrdered; i++) {
+            System.out.println((i + 1) + ". " + itemsOrdered[i].toString());
+        }
+        System.out.println("Total cost: " + totalCost() + " $");
+        System.out.println("***************************************************");
+    }
+
+    // 7. Tìm kiếm theo ID
+    public void searchById(int id) {
+        boolean found = false;
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].getId() == id) {
+                System.out.println("Found: " + itemsOrdered[i].toString());
+                found = true;
                 break;
             }
         }
+        if (!found) System.out.println("No DVD found with ID: " + id);
     }
 
-    // 2.2. Nạp chồng phương thức nhận vào 2 đĩa DVD rời nhau
-    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
-        if (qtyOrdered + 2 <= MAX_NUMBERS_ORDERED) {
-            addDigitalVideoDisc(dvd1);
-            addDigitalVideoDisc(dvd2);
-        } else {
-            System.out.println("The cart is almost full");
+    // 8. Tìm kiếm theo Title
+    public void searchByTitle(String title) {
+        boolean found = false;
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].isMatch(title)) {
+                System.out.println("Found: " + itemsOrdered[i].toString());
+                found = true;
+            }
         }
+        if (!found) System.out.println("No DVD found with title: " + title);
     }
 }
