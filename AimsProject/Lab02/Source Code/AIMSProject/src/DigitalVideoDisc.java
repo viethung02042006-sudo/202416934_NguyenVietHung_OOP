@@ -54,7 +54,9 @@ public class DigitalVideoDisc {
         return length;
     }
 
-    public float getCost() {
-        return cost;
+    public float getCost()
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

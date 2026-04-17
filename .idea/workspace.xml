@@ -4,16 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cbb9b7b-4a5a-49a9-8e23-f36ecb6df216" name="Changes" comment="Refactor: finalize project structure before merging to master HOAN THANH PHAN 1" />
+    <list default="true" id="6cbb9b7b-4a5a-49a9-8e23-f36ecb6df216" name="Changes" comment="Refactor: finalize project structure before merging to master HOAN THANH PHAN 1">
+      <change afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/TestPassingParameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AimsProject/answers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/DigitalVideoDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/DigitalVideoDisc.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="refactor/apply-release-flow" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,7 +60,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "topic/passing-parameter",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/OOP THUC HANH/202416934_NguyenVietHung",
     "project.structure.last.edited": "Modules",

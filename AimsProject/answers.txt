@@ -1,0 +1,15 @@
+--- Lab 03 - Section 2: Method Overloading ---
+
+Question: Compare Array parameter vs Varargs. What do you prefer?
+Answer: I prefer using Varargs (DigitalVideoDisc... dvds).
+Reason: It is more flexible than an array parameter because it allows the method
+to accept zero or multiple arguments, or even an array, without the need to
+explicitly create an array object in the calling code.
+
+--- Section 3: Passing Parameter ---
+
+Q1: After the call swap(), why do the titles of the two objects remain the same?
+A1: Because Java is a "pass-by-value" language. When we pass objects to a method, Java copies the reference (the address). The swap() method only swaps these local copies, not the original references outside the method.
+
+Q2: After the call changeTitle(), why is the title of the JungleDVD changed?
+A2: Although the reference is a copy, it still points to the same object in memory. Calling dvd.setTitle() directly modifies the data of that specific object.
