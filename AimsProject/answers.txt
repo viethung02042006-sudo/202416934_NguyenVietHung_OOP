@@ -13,3 +13,7 @@ A1: Because Java is a "pass-by-value" language. When we pass objects to a method
 
 Q2: After the call changeTitle(), why is the title of the JungleDVD changed?
 A2: Although the reference is a copy, it still points to the same object in memory. Calling dvd.setTitle() directly modifies the data of that specific object.
+
+--- Section 5: Classifier Member and Instance Member ---
+- 'nbDigitalVideoDiscs' is a static member because it belongs to the class and keeps track of the total number of DVD objects created.
+- 'id' is an instance member because it is unique to each DVD object.
