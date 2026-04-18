@@ -1,3 +1,7 @@
+package hust.soict.dsai.aims.store;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+
 public class Store {
     // Giả sử kho hàng có sức chứa lớn hơn giỏ hàng, ví dụ 100 đĩa
     private DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[100];

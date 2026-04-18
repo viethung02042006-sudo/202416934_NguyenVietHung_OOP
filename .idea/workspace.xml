@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="6cbb9b7b-4a5a-49a9-8e23-f36ecb6df216" name="Changes" comment="implement print cart, search methods and complete Section 6 (HOAN THANH PHAN 6)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/Aims.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/Aims.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/cart/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/CartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/test/cart/CartTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/DigitalVideoDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/disc/DigitalVideoDisc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/store/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/StoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/test/store/StoreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/TestPassingParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/test/disc/TestPassingParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AimsProject/answers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/answers.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="release/lab03" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,7 +66,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "refactor/reorganize-packages",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/OOP THUC HANH/202416934_NguyenVietHung",
     "project.structure.last.edited": "Modules",
@@ -130,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776419250173</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- Successfully created the Store class with an array to manage available DVDs.&#10;- Implemented addDVD() and removeDVD() methods.&#10;- Verified functionality using StoreTest class.">
+      <option name="closed" value="true" />
+      <created>1776528476983</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1776528476984</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -139,6 +155,7 @@
     <MESSAGE value="Refactor, tao thu muc AimsProject va OtherProjects de tao ket qua giong nhu hinh anh Figure 1. Merging result" />
     <MESSAGE value="Refactor: finalize project structure before merging to master HOAN THANH PHAN 1" />
     <MESSAGE value="implement auto-increment ID for DigitalVideoDisc using static member. HOAN THANH PHAN 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement auto-increment ID for DigitalVideoDisc using static member. HOAN THANH PHAN 5" />
+    <MESSAGE value="- Successfully created the Store class with an array to manage available DVDs.&#10;- Implemented addDVD() and removeDVD() methods.&#10;- Verified functionality using StoreTest class." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Successfully created the Store class with an array to manage available DVDs.&#10;- Implemented addDVD() and removeDVD() methods.&#10;- Verified functionality using StoreTest class." />
   </component>
 </project>
