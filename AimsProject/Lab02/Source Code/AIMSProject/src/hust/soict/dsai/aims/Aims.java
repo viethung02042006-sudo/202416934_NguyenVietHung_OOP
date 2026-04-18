@@ -30,4 +30,5 @@ public class Aims {
         // 7. Thử in giỏ hàng (Chức năng mới Lab 03)
         anOrder.print();
     }
+    // This line is added to demonstrate the GitHub Release Flow.
 }

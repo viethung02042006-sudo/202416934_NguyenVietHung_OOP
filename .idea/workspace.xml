@@ -5,37 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cbb9b7b-4a5a-49a9-8e23-f36ecb6df216" name="Changes" comment="implement print cart, search methods and complete Section 6 (HOAN THANH PHAN 6)">
-      <change afterPath="$PROJECT_DIR$/OtherProjects/src/hust/soict/dsai/garbage/ConcatenationInLoops.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtherProjects/src/hust/soict/dsai/garbage/GarbageCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtherProjects/src/hust/soict/dsai/garbage/NoGarbage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaiLam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BaiLam.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.1/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.1/HelloWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.1/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.1/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.2/FirstDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.2/FirstDialog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.2/FirstDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.2/FirstDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.3/HelloNameDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.3/HelloNameDialog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.3/HelloNameDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.3/HelloNameDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.4/ShowTwoNumbers.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.4/ShowTwoNumbers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.4/ShowTwoNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.4/ShowTwoNumbers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.5/CalculateTwoNumbers.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.5/CalculateTwoNumbers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.5/CalculateTwoNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.5/CalculateTwoNumbers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.6/EquationSolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.6/EquationSolver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.6/EquationSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.6/EquationSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.1/Buoi1_6.1.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.1/ChoosingOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.2/InputFromKeyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.2/InputFromKeyboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.2/InputFromKeyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.2/InputFromKeyboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.3/CreateTriangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.3/CreateTriangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.3/CreateTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.3/CreateTriangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.4/DaysInMonth.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.4/DaysInMonth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.4/DaysInMonth.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.4/DaysInMonth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.5/ArrayOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.5/ArrayOperations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.5/ArrayOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.5/ArrayOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.6/MatrixAddition.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.6/MatrixAddition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.6/MatrixAddition.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.6/MatrixAddition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/HelloWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Helloworld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/answers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/answers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/Aims.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/Aims.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +62,8 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "release/lab03",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "git-widget-placeholder": "feature/demonstrate-release-flow",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/OOP THUC HANH/202416934_NguyenVietHung",
     "project.structure.last.edited": "Modules",
@@ -171,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776528476984</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary=" create a new package hust.soict.globalict.garbage for &#10;ICT or hust.soict.dsai.garbage for DS-AI">
+      <option name="closed" value="true" />
+      <created>1776532178063</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1776532178063</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -181,6 +161,7 @@
     <MESSAGE value="Refactor: finalize project structure before merging to master HOAN THANH PHAN 1" />
     <MESSAGE value="implement auto-increment ID for DigitalVideoDisc using static member. HOAN THANH PHAN 5" />
     <MESSAGE value="- Successfully created the Store class with an array to manage available DVDs.&#10;- Implemented addDVD() and removeDVD() methods.&#10;- Verified functionality using StoreTest class." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Successfully created the Store class with an array to manage available DVDs.&#10;- Implemented addDVD() and removeDVD() methods.&#10;- Verified functionality using StoreTest class." />
+    <MESSAGE value=" create a new package hust.soict.globalict.garbage for &#10;ICT or hust.soict.dsai.garbage for DS-AI" />
+    <option name="LAST_COMMIT_MESSAGE" value=" create a new package hust.soict.globalict.garbage for &#10;ICT or hust.soict.dsai.garbage for DS-AI" />
   </component>
 </project>
