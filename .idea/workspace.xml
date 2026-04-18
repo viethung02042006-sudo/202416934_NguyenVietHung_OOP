@@ -5,15 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cbb9b7b-4a5a-49a9-8e23-f36ecb6df216" name="Changes" comment="implement print cart, search methods and complete Section 6 (HOAN THANH PHAN 6)">
+      <change afterPath="$PROJECT_DIR$/OtherProjects/src/hust/soict/dsai/garbage/ConcatenationInLoops.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtherProjects/src/hust/soict/dsai/garbage/GarbageCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtherProjects/src/hust/soict/dsai/garbage/NoGarbage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/Aims.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/Aims.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/cart/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/CartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/test/cart/CartTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/DigitalVideoDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/disc/DigitalVideoDisc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/store/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/StoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/test/store/StoreTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/TestPassingParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/test/disc/TestPassingParameter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AimsProject/answers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/answers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaiLam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BaiLam.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.1/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.1/HelloWorld.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.1/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.1/HelloWorld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.2/FirstDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.2/FirstDialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.2/FirstDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.2/FirstDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.3/HelloNameDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.3/HelloNameDialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.3/HelloNameDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.3/HelloNameDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.4/ShowTwoNumbers.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.4/ShowTwoNumbers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.4/ShowTwoNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.4/ShowTwoNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.5/CalculateTwoNumbers.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.5/CalculateTwoNumbers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.5/CalculateTwoNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.5/CalculateTwoNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.6/EquationSolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.6/EquationSolver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_2.2.6/EquationSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_2.2.6/EquationSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.1/Buoi1_6.1.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.1/ChoosingOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.2/InputFromKeyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.2/InputFromKeyboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.2/InputFromKeyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.2/InputFromKeyboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.3/CreateTriangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.3/CreateTriangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.3/CreateTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.3/CreateTriangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.4/DaysInMonth.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.4/DaysInMonth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.4/DaysInMonth.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.4/DaysInMonth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.5/ArrayOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.5/ArrayOperations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.5/ArrayOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.5/ArrayOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.6/MatrixAddition.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.6/MatrixAddition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/Buoi1_6.6/MatrixAddition.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Buoi1_6.6/MatrixAddition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/HelloWorld.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/Helloworld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtherProjects/Lab01/answers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/OtherProjects/src/Lab01/answers.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,10 +85,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.CartTest.executor": "Run",
+    "Application.GarbageCreator.executor": "Run",
+    "Application.HelloWorld.executor": "Run",
+    "Application.NoGarbage.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "refactor/reorganize-packages",
+    "git-widget-placeholder": "release/lab03",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/OOP THUC HANH/202416934_NguyenVietHung",
     "project.structure.last.edited": "Modules",
@@ -76,11 +101,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OOP THUC HANH\202416934_NguyenVietHung\OtherProjects\src" />
       <recent name="D:\OOP THUC HANH\202416934_NguyenVietHung\AimsProject" />
       <recent name="D:\OOP THUC HANH\202416934_NguyenVietHung\OtherProjects" />
       <recent name="D:\OOP THUC HANH\BaiLam" />
       <recent name="D:\OOP THUC HANH\BaiLam\OtherProjects" />
-      <recent name="D:\OOP THUC HANH\BaiLam\AimsProject" />
     </key>
   </component>
   <component name="SharedIndexes">
