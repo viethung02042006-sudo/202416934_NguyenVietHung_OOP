@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cbb9b7b-4a5a-49a9-8e23-f36ecb6df216" name="Changes" comment="implement print cart, search methods and complete Section 6 (HOAN THANH PHAN 6)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/Aims.java" beforeDir="false" afterPath="$PROJECT_DIR$/AimsProject/Lab02/Source Code/AIMSProject/src/hust/soict/dsai/aims/Aims.java" afterDir="false" />
-    </list>
+    <list default="true" id="6cbb9b7b-4a5a-49a9-8e23-f36ecb6df216" name="Changes" comment="Add a feature for demonstration" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1776532178063</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add a feature for demonstration">
+      <option name="closed" value="true" />
+      <created>1776533077364</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1776533077364</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -162,6 +167,7 @@
     <MESSAGE value="implement auto-increment ID for DigitalVideoDisc using static member. HOAN THANH PHAN 5" />
     <MESSAGE value="- Successfully created the Store class with an array to manage available DVDs.&#10;- Implemented addDVD() and removeDVD() methods.&#10;- Verified functionality using StoreTest class." />
     <MESSAGE value=" create a new package hust.soict.globalict.garbage for &#10;ICT or hust.soict.dsai.garbage for DS-AI" />
-    <option name="LAST_COMMIT_MESSAGE" value=" create a new package hust.soict.globalict.garbage for &#10;ICT or hust.soict.dsai.garbage for DS-AI" />
+    <MESSAGE value="Add a feature for demonstration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a feature for demonstration" />
   </component>
 </project>
