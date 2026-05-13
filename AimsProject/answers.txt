@@ -17,3 +17,7 @@ A2: Although the reference is a copy, it still points to the same object in memo
 --- Section 5: Classifier Member and Instance Member ---
 - 'nbDigitalVideoDiscs' is a static member because it belongs to the class and keeps track of the total number of DVD objects created.
 - 'id' is an instance member because it is unique to each DVD object.
+
+
+
+----LAB 04: INHERITANCE AND POLYMORPHISM----
