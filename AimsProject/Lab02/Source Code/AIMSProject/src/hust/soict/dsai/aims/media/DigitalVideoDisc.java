@@ -1,8 +1,6 @@
 package hust.soict.dsai.aims.media;
 
-public class DigitalVideoDisc extends Media {
-    private String director;
-    private int length;
+public class DigitalVideoDisc extends Disc {
 
     // Biến static để đếm số lượng DVD được tạo ra
     private static int nbDigitalVideoDiscs = 0;
@@ -11,58 +9,30 @@ public class DigitalVideoDisc extends Media {
 
     // 1. Khởi tạo bằng tiêu đề (title)
     public DigitalVideoDisc(String title) {
-        super(); // Gọi constructor lớp Media
-        this.setTitle(title);
-
+        super(title);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
     }
 
     // 2. Khởi tạo bằng danh mục, tiêu đề và giá (category, title, cost)
     public DigitalVideoDisc(String category, String title, float cost) {
-        super();
-        this.setTitle(title);
-        this.setCategory(category);
-        this.setCost(cost);
-
+        super(title, category, cost);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
     }
 
     // 3. Khởi tạo bằng đạo diễn, danh mục, tiêu đề và giá (director, category, title, cost)
     public DigitalVideoDisc(String director, String category, String title, float cost) {
-        super();
-        this.setTitle(title);
-        this.setCategory(category);
-        this.setCost(cost);
-        this.director = director;
-
+        super(title, category, director, cost);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
     }
 
     // 4. Khởi tạo bằng tất cả thuộc tính
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        super();
-        this.setTitle(title);
-        this.setCategory(category);
-        this.setCost(cost);
-        this.director = director;
-        this.length = length;
-
+        super(title, category, director, length, cost);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
-    }
-
-    // --- CÁC HÀM LẤY DỮ LIỆU (GETTERS) ---
-    // Các Getter như getTitle, getCategory, getCost đã kế thừa từ Media nên không cần viết lại ở đây
-
-    public String getDirector() {
-        return director;
-    }
-
-    public int getLength() {
-        return length;
     }
 
     // Getter để lấy tổng số đĩa hiện có
@@ -74,12 +44,12 @@ public class DigitalVideoDisc extends Media {
 
     @Override
     public String toString() {
-        // Sử dụng các hàm Getter từ lớp cha Media để lấy dữ liệu
-        return "DVD - " + getTitle() + " - " + getCategory() + " - " + director + " - " + length + ": " + getCost() + " $";
+        // Sử dụng các hàm Getter từ lớp cha Disc và Media để lấy dữ liệu
+        return "DVD - " + getTitle() + " - " + getCategory() + " - " + getDirector() + " - " + getLength() + ": " + getCost() + " $";
     }
 
     // Hàm kiểm tra tiêu đề có khớp không
     public boolean isMatch(String title) {
         return this.getTitle().equals(title);
     }
-}
+}
