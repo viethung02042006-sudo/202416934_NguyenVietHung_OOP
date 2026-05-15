@@ -27,6 +27,7 @@ public class Track implements Playable {
         if (this == obj) return true;
         if (!(obj instanceof Track)) return false;
         Track other = (Track) obj;
-        return this.title.equals(other.title) && this.length == other.length;
+        return this.title != null && this.title.equalsIgnoreCase(other.title) 
+               && this.length == other.length;
     }
 }

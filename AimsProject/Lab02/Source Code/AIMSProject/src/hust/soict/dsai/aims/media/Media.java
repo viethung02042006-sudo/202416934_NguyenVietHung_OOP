@@ -32,4 +32,12 @@ public abstract class Media {
 
     public float getCost() { return cost; }
     public void setCost(float cost) { this.cost = cost; }
-}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Media media = (Media) o;
+        return title != null && title.equalsIgnoreCase(media.title);
+    }
+}
