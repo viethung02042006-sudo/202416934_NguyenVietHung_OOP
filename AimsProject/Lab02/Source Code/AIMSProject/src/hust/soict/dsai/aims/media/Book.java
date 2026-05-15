@@ -5,26 +5,21 @@ import java.util.List;
 
 public class Book extends Media {
 
-    // Thuộc tính riêng của lớp Book
     private List<String> authors = new ArrayList<String>();
 
-    // Constructor mặc định
     public Book() {
         super();
     }
 
-    // Constructor đầy đủ để Hưng dễ dùng trong bài test
     public Book(int id, String title, String category, float cost) {
-        super();
-        this.setId(id);
-        this.setTitle(title);
-        this.setCategory(category);
-        this.setCost(cost);
+        super(id, title, category, cost);
     }
 
-    // --- CÁC PHƯƠNG THỨC NGHIỆP VỤ (Yêu cầu ảnh image_095fd8.png) ---
+    public Book(int id, String title, String category, float cost, List<String> authors) {
+        super(id, title, category, cost);
+        this.authors = authors;
+    }
 
-    // Thêm tác giả: Kiểm tra xem tác giả đã có trong list chưa trước khi thêm
     public void addAuthor(String authorName) {
         if (!authors.contains(authorName)) {
             authors.add(authorName);
@@ -34,7 +29,6 @@ public class Book extends Media {
         }
     }
 
-    // Xóa tác giả: Kiểm tra xem tác giả có trong list không trước khi xóa
     public void removeAuthor(String authorName) {
         if (authors.contains(authorName)) {
             authors.remove(authorName);
@@ -44,12 +38,16 @@ public class Book extends Media {
         }
     }
 
-    // --- GETTER VÀ SETTER CHO AUTHORS ---
     public List<String> getAuthors() {
         return authors;
     }
 
     public void setAuthors(List<String> authors) {
         this.authors = authors;
+    }
+
+    @Override
+    public String toString() {
+        return "Book - " + getTitle() + " - " + getCategory() + " - Authors: " + authors + ": " + getCost() + " $";
     }
 }

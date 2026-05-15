@@ -6,13 +6,23 @@ public abstract class Media {
     private String category;
     private float cost;
 
-    // 1. Constructor mặc định 
     public Media() {
     }
 
-    // 2. Các Getter và Setter
+    public Media(int id, String title) {
+        this.id = id;
+        this.title = title;
+    }
+
+    public Media(int id, String title, String category, float cost) {
+        this.id = id;
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+
     public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    // Xóa setId vì id thường không đổi sau khi tạo
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
