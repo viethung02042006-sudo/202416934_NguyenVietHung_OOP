@@ -1,7 +1,7 @@
 --- Lab 03 - Section 2: Method Overloading ---
 
 Question: Compare Array parameter vs Varargs. What do you prefer?
-Answer: I prefer using Varargs (hust.soict.dsai.aims.disc.DigitalVideoDisc... dvds).
+Answer: I prefer using Varargs (hust.soict.dsai.aims.media.DigitalVideoDisc... dvds).
 Reason: It is more flexible than an array parameter because it allows the method
 to accept zero or multiple arguments, or even an array, without the need to
 explicitly create an array object in the calling code.
