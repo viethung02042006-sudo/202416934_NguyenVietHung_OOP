@@ -1,4 +1,25 @@
 package hust.soict.dsai.aims.media;
 
-public class Media {
+public abstract class Media {
+    private int id;
+    private String title;
+    private String category;
+    private float cost;
+
+    // 1. Constructor mặc định 
+    public Media() {
+    }
+
+    // 2. Các Getter và Setter
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
+
+    public String getCategory() { return category; }
+    public void setCategory(String category) { this.category = category; }
+
+    public float getCost() { return cost; }
+    public void setCost(float cost) { this.cost = cost; }
 }
