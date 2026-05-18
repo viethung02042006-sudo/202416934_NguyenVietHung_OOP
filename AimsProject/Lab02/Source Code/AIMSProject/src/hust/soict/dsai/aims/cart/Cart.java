@@ -74,4 +74,18 @@ public class Cart {
         java.util.Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
         System.out.println("Cart has been sorted by Cost then Title.");
     }
+
+    public Media fetchMedia(String title) {
+        for (Media media : itemsOrdered) {
+            if (media.getTitle().equalsIgnoreCase(title)) {
+                return media;
+            }
+        }
+        return null;
+    }
+
+    public void empty() {
+        itemsOrdered.clear();
+        System.out.println("The cart has been emptied.");
+    }
 }
