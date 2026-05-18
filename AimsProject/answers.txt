@@ -21,3 +21,19 @@ A2: Although the reference is a copy, it still points to the same object in memo
 
 
 ----LAB 04: INHERITANCE AND POLYMORPHISM----
+
+--- Part 12: Sort media in the cart ---
+Q1: Lớp nào nên thực thi Interface Comparable?
+A1: Lớp cha Media nên thực thi Interface Comparable<Media>. Nhờ tính đa hình, tất cả các lớp con (như DVD, CD, Book) đều sẽ được kế thừa khả năng so sánh này.
+
+Q2: Trong lớp đó, bạn sẽ cài đặt hàm compareTo() như thế nào để phản ánh thứ tự mong muốn?
+A2: Trong lớp Media, ta sẽ ghi đè hàm compareTo(Media other). Ta sẽ chọn một luật làm luật sắp xếp mặc định (Natural Ordering), ví dụ luật Tiêu đề - Giá. Đầu tiên so sánh thuộc tính title (this.title.compareTo(other.getTitle())). Nếu bằng 0 (trùng tiêu đề), ta tiếp tục so sánh thuộc tính cost (giảm dần: other.getCost() - this.getCost()).
+
+Q3: Chúng ta có thể có 2 luật sắp xếp (theo tiêu đề rồi giá, VÀ theo giá rồi tiêu đề) nếu sử dụng phương pháp Interface Comparable không?
+A3: KHÔNG THỂ. Interface Comparable chỉ cho phép định nghĩa MỘT luật sắp xếp mặc định (Natural Ordering) duy nhất cho mỗi lớp thông qua hàm compareTo(). Nếu muốn có nhiều cách sắp xếp khác nhau tùy trường hợp, ta BẮT BUỘC phải dùng Comparator.
+
+Q4: Giả sử DVD có một luật sắp xếp riêng biệt khác với các loại media khác (sắp xếp theo tiêu đề, sau đó giảm dần theo độ dài length, rồi mới đến cost). Bạn sẽ sửa code như thế nào để cho phép điều này?
+A4: Ta sẽ không dùng Comparable của Media nữa. Thay vào đó, ta tạo một lớp Comparator dành riêng cho DVD (ví dụ: public class DvdComparator implements Comparator<DigitalVideoDisc>). Trong hàm compare(DVD d1, DVD d2), ta kiểm tra lần lượt: 
+1. So sánh title. Nếu bằng nhau thì chuyển sang bước 2.
+2. So sánh length (giảm dần: d2.getLength() - d1.getLength()). Nếu bằng nhau thì chuyển sang bước 3.
+3. So sánh cost (giảm dần).

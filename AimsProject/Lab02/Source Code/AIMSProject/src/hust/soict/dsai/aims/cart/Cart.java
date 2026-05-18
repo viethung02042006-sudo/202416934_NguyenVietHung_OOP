@@ -64,4 +64,14 @@ public class Cart {
         }
         if (!found) System.out.println("No media found with title: " + title);
     }
-}
+
+    public void sortByTitleCost() {
+        java.util.Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+        System.out.println("Cart has been sorted by Title then Cost.");
+    }
+
+    public void sortByCostTitle() {
+        java.util.Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+        System.out.println("Cart has been sorted by Cost then Title.");
+    }
+}

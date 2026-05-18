@@ -52,15 +52,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Aims.executor": "Run",
     "Application.CartTest.executor": "Run",
     "Application.GarbageCreator.executor": "Run",
     "Application.HelloWorld.executor": "Run",
     "Application.NoGarbage.executor": "Run",
+    "Application.PolymorphismTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "topic/override-equals-method",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/OOP THUC HANH/202416934_NguyenVietHung",
     "project.structure.last.edited": "Modules",
