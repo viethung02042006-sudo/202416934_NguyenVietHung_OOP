@@ -12,12 +12,12 @@ public class StoreTest {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin");
 
         // Test thêm đĩa
-        myStore.addDVD(dvd1);
-        myStore.addDVD(dvd2);
-        myStore.addDVD(dvd3);
+        myStore.addMedia(dvd1);
+        myStore.addMedia(dvd2);
+        myStore.addMedia(dvd3);
 
         // Test xóa đĩa
-        myStore.removeDVD(dvd2); // Xóa đĩa có trong kho
-        myStore.removeDVD(new DigitalVideoDisc("Avengers")); // Xóa đĩa không có trong kho
+        myStore.removeMedia(dvd2); // Xóa đĩa có trong kho
+        myStore.removeMedia(new DigitalVideoDisc("Avengers")); // Xóa đĩa không có trong kho
     }
 }

@@ -14,15 +14,15 @@ public class Aims {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
 
         // 3. Thêm vào giỏ
-        anOrder.addDigitalVideoDisc(dvd1);
-        anOrder.addDigitalVideoDisc(dvd2);
-        anOrder.addDigitalVideoDisc(dvd3);
+        anOrder.addMedia(dvd1);
+        anOrder.addMedia(dvd2);
+        anOrder.addMedia(dvd3);
 
         // 4. In tổng tiền trước khi xóa
         System.out.println("Total Cost before removal is: " + anOrder.totalCost());
 
         // 5. Thực hiện XÓA đĩa (Dòng này của bạn đang lỗi nếu sai tên biến)
-        anOrder.removeDigitalVideoDisc(dvd2);
+        anOrder.removeMedia(dvd2);
 
         // 6. Kiểm tra lại tổng tiền
         System.out.println("Total Cost after removal is: " + anOrder.totalCost());
