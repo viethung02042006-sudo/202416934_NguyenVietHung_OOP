@@ -37,3 +37,6 @@ A4: Ta sẽ không dùng Comparable của Media nữa. Thay vào đó, ta tạo 
 1. So sánh title. Nếu bằng nhau thì chuyển sang bước 2.
 2. So sánh length (giảm dần: d2.getLength() - d1.getLength()). Nếu bằng nhau thì chuyển sang bước 3.
 3. So sánh cost (giảm dần).
+
+
+----LAB 05: GUI PROGRAMMING----
