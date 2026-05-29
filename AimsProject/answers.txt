@@ -40,3 +40,15 @@ A4: Ta sẽ không dùng Comparable của Media nữa. Thay vào đó, ta tạo 
 
 
 ----LAB 05: GUI PROGRAMMING----
+
+--- Part 1.3: Compare Swing and AWT elements ---
+
+1. Sự khác biệt về Top-level Container:
+   - AWT: Sử dụng `Frame`. Các thành phần giao diện (components) được thêm trực tiếp vào Frame bằng hàm `add()`. Frame không có sẵn tính năng tự động đóng chương trình khi nhấn nút tắt cửa sổ (phải tự đăng ký `WindowListener`).
+   - Swing: Sử dụng `JFrame`. Đối với các thành phần giao diện, chúng được thêm vào Content Pane của JFrame (lấy thông qua hàm `getContentPane()`), mặc dù từ Java 5 trở đi hàm `add()` của JFrame đã được ánh xạ tự động vào Content Pane để tiện lợi hơn. JFrame hỗ trợ quản lý thao tác đóng cửa sổ dễ dàng thông qua hàm `setDefaultCloseOperation()`.
+
+2. Sự khác biệt về Tên Component và Tính chất (Heavyweight vs Lightweight):
+   - Tên Component: Các thành phần của Swing kế thừa từ AWT nhưng được thêm tiền tố "J" để phân biệt (ví dụ: `Label` thành `JLabel`, `TextField` thành `JTextField`, `Button` thành `JButton`).
+   - Tính chất:
+     + AWT Components là "heavyweight" (phụ thuộc vào các thành phần đồ họa của hệ điều hành gốc). Do đó, giao diện hiển thị của ứng dụng AWT sẽ thay đổi tùy thuộc vào hệ điều hành chạy ứng dụng (Windows, macOS, Linux) và bị hạn chế về khả năng tùy chỉnh.
+     + Swing Components là "lightweight" (được viết và vẽ hoàn toàn bằng Java). Giao diện của Swing hoạt động đồng nhất trên mọi nền tảng, hỗ trợ cơ chế thay đổi giao diện linh hoạt (Pluggable Look and Feel) và cho phép các thành phần chồng đè lên nhau một cách mượt mà.
