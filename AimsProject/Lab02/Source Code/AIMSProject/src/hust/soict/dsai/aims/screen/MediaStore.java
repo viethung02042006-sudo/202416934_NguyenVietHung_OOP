@@ -9,6 +9,8 @@ import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.CompactDisc;
 import hust.soict.dsai.aims.media.Track;
 import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.exception.LimitExceededException;
+import hust.soict.dsai.aims.exception.PlayerException;
 
 public class MediaStore extends JPanel {
     private Media media;
@@ -34,10 +36,16 @@ public class MediaStore extends JPanel {
         btnAddToCart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cart.addMedia(MediaStore.this.media);
-                JOptionPane.showMessageDialog(null, 
-                    MediaStore.this.media.getTitle() + " has been added to cart.",
-                    "Cart Update", JOptionPane.INFORMATION_MESSAGE);
+                try {
+                    cart.addMedia(MediaStore.this.media);
+                    JOptionPane.showMessageDialog(null, 
+                        MediaStore.this.media.getTitle() + " has been added to cart.",
+                        "Cart Update", JOptionPane.INFORMATION_MESSAGE);
+                } catch (LimitExceededException ex) {
+                    JOptionPane.showMessageDialog(null, 
+                        ex.getMessage(),
+                        "Limit Exceeded", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
 
@@ -47,56 +55,64 @@ public class MediaStore extends JPanel {
             btnPlay.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(MediaStore.this), "Play Media", true);
-                    dialog.setLayout(new BorderLayout());
-                    
-                    StringBuilder message = new StringBuilder();
-                    message.append("<html><body style='width: 250px; padding: 10px;'>");
-                    if (MediaStore.this.media instanceof DigitalVideoDisc) {
-                        DigitalVideoDisc dvd = (DigitalVideoDisc) MediaStore.this.media;
-                        message.append("<h2 style='color: blue;'>Playing DVD: ").append(dvd.getTitle()).append("</h2>");
-                        message.append("<p><b>Category:</b> ").append(dvd.getCategory()).append("</p>");
-                        message.append("<p><b>Director:</b> ").append(dvd.getDirector()).append("</p>");
-                        message.append("<p><b>Length:</b> ").append(dvd.getLength()).append(" minutes</p>");
-                    } else if (MediaStore.this.media instanceof CompactDisc) {
-                        CompactDisc cd = (CompactDisc) MediaStore.this.media;
-                        message.append("<h2 style='color: blue;'>Playing CD: ").append(cd.getTitle()).append("</h2>");
-                        message.append("<p><b>Artist:</b> ").append(cd.getArtist()).append("</p>");
-                        message.append("<p><b>Category:</b> ").append(cd.getCategory()).append("</p>");
-                        message.append("<p><b>Director:</b> ").append(cd.getDirector()).append("</p>");
-                        message.append("<p><b>Length:</b> ").append(cd.getLength()).append(" seconds</p>");
-                        message.append("<hr><b>Tracks:</b><br>");
-                        if (cd.getTracks().isEmpty()) {
-                            message.append("<i>No tracks available.</i>");
-                        } else {
-                            message.append("<ol>");
-                            for (Track track : cd.getTracks()) {
-                                message.append("<li>").append(track.getTitle())
-                                       .append(" (").append(track.getLength()).append("s)</li>");
+                    try {
+                        ((Playable) MediaStore.this.media).play();
+
+                        JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(MediaStore.this), "Play Media", true);
+                        dialog.setLayout(new BorderLayout());
+                        
+                        StringBuilder message = new StringBuilder();
+                        message.append("<html><body style='width: 250px; padding: 10px;'>");
+                        if (MediaStore.this.media instanceof DigitalVideoDisc) {
+                            DigitalVideoDisc dvd = (DigitalVideoDisc) MediaStore.this.media;
+                            message.append("<h2 style='color: blue;'>Playing DVD: ").append(dvd.getTitle()).append("</h2>");
+                            message.append("<p><b>Category:</b> ").append(dvd.getCategory()).append("</p>");
+                            message.append("<p><b>Director:</b> ").append(dvd.getDirector()).append("</p>");
+                            message.append("<p><b>Length:</b> ").append(dvd.getLength()).append(" minutes</p>");
+                        } else if (MediaStore.this.media instanceof CompactDisc) {
+                            CompactDisc cd = (CompactDisc) MediaStore.this.media;
+                            message.append("<h2 style='color: blue;'>Playing CD: ").append(cd.getTitle()).append("</h2>");
+                            message.append("<p><b>Artist:</b> ").append(cd.getArtist()).append("</p>");
+                            message.append("<p><b>Category:</b> ").append(cd.getCategory()).append("</p>");
+                            message.append("<p><b>Director:</b> ").append(cd.getDirector()).append("</p>");
+                            message.append("<p><b>Length:</b> ").append(cd.getLength()).append(" seconds</p>");
+                            message.append("<hr><b>Tracks:</b><br>");
+                            if (cd.getTracks().isEmpty()) {
+                                message.append("<i>No tracks available.</i>");
+                            } else {
+                                message.append("<ol>");
+                                for (Track track : cd.getTracks()) {
+                                    message.append("<li>").append(track.getTitle())
+                                           .append(" (").append(track.getLength()).append("s)</li>");
+                                }
+                                message.append("</ol>");
                             }
-                            message.append("</ol>");
                         }
+                        message.append("</body></html>");
+
+                        JLabel lblMessage = new JLabel(message.toString());
+                        lblMessage.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+                        dialog.add(lblMessage, BorderLayout.CENTER);
+
+                        JButton btnClose = new JButton("Close");
+                        btnClose.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent evt) {
+                                dialog.dispose();
+                            }
+                        });
+                        JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+                        btnPanel.add(btnClose);
+                        dialog.add(btnPanel, BorderLayout.SOUTH);
+
+                        dialog.pack();
+                        dialog.setLocationRelativeTo(dialog.getParent());
+                        dialog.setVisible(true);
+                    } catch (PlayerException ex) {
+                        JOptionPane.showMessageDialog(null, 
+                            ex.getMessage(), 
+                            "Player Error", JOptionPane.ERROR_MESSAGE);
                     }
-                    message.append("</body></html>");
-
-                    JLabel lblMessage = new JLabel(message.toString());
-                    lblMessage.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-                    dialog.add(lblMessage, BorderLayout.CENTER);
-
-                    JButton btnClose = new JButton("Close");
-                    btnClose.addActionListener(new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent evt) {
-                            dialog.dispose();
-                        }
-                    });
-                    JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-                    btnPanel.add(btnClose);
-                    dialog.add(btnPanel, BorderLayout.SOUTH);
-
-                    dialog.pack();
-                    dialog.setLocationRelativeTo(dialog.getParent());
-                    dialog.setVisible(true);
                 }
             });
         }

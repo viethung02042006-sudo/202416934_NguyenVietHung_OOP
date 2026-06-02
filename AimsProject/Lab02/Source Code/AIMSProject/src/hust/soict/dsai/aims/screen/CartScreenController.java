@@ -25,6 +25,7 @@ import hust.soict.dsai.aims.media.Playable;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.CompactDisc;
 import hust.soict.dsai.aims.media.Track;
+import hust.soict.dsai.aims.exception.PlayerException;
 
 public class CartScreenController {
     private Store store;
@@ -147,32 +148,42 @@ public class CartScreenController {
     void btnPlayPressed(ActionEvent event) {
         Media media = tblMedia.getSelectionModel().getSelectedItem();
         if (media instanceof Playable) {
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Play Media");
-            alert.setHeaderText("Playing: " + media.getTitle());
-            
-            StringBuilder sb = new StringBuilder();
-            if (media instanceof DigitalVideoDisc) {
-                DigitalVideoDisc dvd = (DigitalVideoDisc) media;
-                sb.append("Category: ").append(dvd.getCategory()).append("\n");
-                sb.append("Director: ").append(dvd.getDirector()).append("\n");
-                sb.append("Length: ").append(dvd.getLength()).append(" minutes");
-            } else if (media instanceof CompactDisc) {
-                CompactDisc cd = (CompactDisc) media;
-                sb.append("Artist: ").append(cd.getArtist()).append("\n");
-                sb.append("Category: ").append(cd.getCategory()).append("\n");
-                sb.append("Length: ").append(cd.getLength()).append(" seconds\n\n");
-                sb.append("Tracks:\n");
-                if (cd.getTracks().isEmpty()) {
-                    sb.append(" - No tracks available");
-                } else {
-                    for (Track track : cd.getTracks()) {
-                        sb.append(" - ").append(track.getTitle()).append(" (").append(track.getLength()).append("s)\n");
+            try {
+                ((Playable) media).play();
+                
+                Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Play Media");
+                alert.setHeaderText("Playing: " + media.getTitle());
+                
+                StringBuilder sb = new StringBuilder();
+                if (media instanceof DigitalVideoDisc) {
+                    DigitalVideoDisc dvd = (DigitalVideoDisc) media;
+                    sb.append("Category: ").append(dvd.getCategory()).append("\n");
+                    sb.append("Director: ").append(dvd.getDirector()).append("\n");
+                    sb.append("Length: ").append(dvd.getLength()).append(" minutes");
+                } else if (media instanceof CompactDisc) {
+                    CompactDisc cd = (CompactDisc) media;
+                    sb.append("Artist: ").append(cd.getArtist()).append("\n");
+                    sb.append("Category: ").append(cd.getCategory()).append("\n");
+                    sb.append("Length: ").append(cd.getLength()).append(" seconds\n\n");
+                    sb.append("Tracks:\n");
+                    if (cd.getTracks().isEmpty()) {
+                        sb.append(" - No tracks available");
+                    } else {
+                        for (Track track : cd.getTracks()) {
+                            sb.append(" - ").append(track.getTitle()).append(" (").append(track.getLength()).append("s)\n");
+                        }
                     }
                 }
+                alert.setContentText(sb.toString());
+                alert.showAndWait();
+            } catch (PlayerException e) {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Player Error");
+                alert.setHeaderText("Could not play: " + media.getTitle());
+                alert.setContentText(e.getMessage());
+                alert.showAndWait();
             }
-            alert.setContentText(sb.toString());
-            alert.showAndWait();
         }
     }
 

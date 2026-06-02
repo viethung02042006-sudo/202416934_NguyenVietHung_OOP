@@ -23,6 +23,9 @@ public abstract class Media {
         this.id = id;
         this.title = title;
         this.category = category;
+        if (cost < 0) {
+            throw new IllegalArgumentException("ERROR: Cost cannot be negative!");
+        }
         this.cost = cost;
     }
 

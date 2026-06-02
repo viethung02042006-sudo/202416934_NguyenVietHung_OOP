@@ -3,6 +3,8 @@ package hust.soict.dsai.aims;
 import java.util.Scanner;
 
 import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.exception.LimitExceededException;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.Book;
 import hust.soict.dsai.aims.media.CompactDisc;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
@@ -100,7 +102,11 @@ public class Aims {
                     String title2 = scanner.nextLine();
                     Media media2 = store.fetchMedia(title2);
                     if (media2 != null) {
-                        cart.addMedia(media2);
+                        try {
+                            cart.addMedia(media2);
+                        } catch (LimitExceededException e) {
+                            System.err.println("ERROR: " + e.getMessage());
+                        }
                     } else {
                         System.out.println("Media not found in store.");
                     }
@@ -111,7 +117,11 @@ public class Aims {
                     Media media3 = store.fetchMedia(title3);
                     if (media3 != null) {
                         if (media3 instanceof Playable) {
-                            ((Playable) media3).play();
+                            try {
+                                ((Playable) media3).play();
+                            } catch (PlayerException e) {
+                                System.err.println("ERROR: " + e.getMessage());
+                            }
                         } else {
                             System.out.println("This media cannot be played.");
                         }
@@ -147,11 +157,19 @@ public class Aims {
 
             switch (choice) {
                 case 1:
-                    cart.addMedia(media);
+                    try {
+                        cart.addMedia(media);
+                    } catch (LimitExceededException e) {
+                        System.err.println("ERROR: " + e.getMessage());
+                    }
                     break;
                 case 2:
                     if (media instanceof Playable) {
-                        ((Playable) media).play();
+                        try {
+                            ((Playable) media).play();
+                        } catch (PlayerException e) {
+                            System.err.println("ERROR: " + e.getMessage());
+                        }
                     } else {
                         System.out.println("Invalid choice.");
                     }
@@ -273,7 +291,11 @@ public class Aims {
                     Media mediaToPlay = cart.fetchMedia(titleToPlay);
                     if (mediaToPlay != null) {
                         if (mediaToPlay instanceof Playable) {
-                            ((Playable) mediaToPlay).play();
+                            try {
+                                ((Playable) mediaToPlay).play();
+                            } catch (PlayerException e) {
+                                System.err.println("ERROR: " + e.getMessage());
+                            }
                         } else {
                             System.out.println("This media cannot be played.");
                         }
