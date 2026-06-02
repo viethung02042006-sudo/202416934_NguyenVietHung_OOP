@@ -1,22 +1,21 @@
 package hust.soict.dsai.aims.screen;
 
 import java.awt.*;
-import java.util.ArrayList;
 import javax.swing.*;
 import hust.soict.dsai.aims.store.Store;
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.media.Media;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
-import hust.soict.dsai.aims.media.CompactDisc;
-import hust.soict.dsai.aims.media.Book;
 
-public class StoreScreen extends JFrame {
-    private Store store;
-    private Cart cart;
+public abstract class AddItemToStoreScreen extends JFrame {
+    protected Store store;
+    protected Cart cart;
+    protected JTextField tfTitle;
+    protected JTextField tfCategory;
+    protected JTextField tfCost;
 
-    public StoreScreen(Store store, Cart cart) {
+    public AddItemToStoreScreen(Store store, Cart cart, String title) {
         this.store = store;
         this.cart = cart;
+
         Container cp = getContentPane();
         cp.setLayout(new BorderLayout());
 
@@ -24,7 +23,7 @@ public class StoreScreen extends JFrame {
         cp.add(createCenter(), BorderLayout.CENTER);
 
         setVisible(true);
-        setTitle("Store");
+        setTitle(title);
         setSize(1024, 768);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -42,6 +41,7 @@ public class StoreScreen extends JFrame {
         JMenu menu = new JMenu("Options");
 
         JMenu smUpdateStore = new JMenu("Update Store");
+        
         JMenuItem addBook = new JMenuItem("Add Book");
         addBook.addActionListener(e -> {
             new AddBookToStoreScreen(store, cart);
@@ -57,24 +57,25 @@ public class StoreScreen extends JFrame {
             new AddDigitalVideoDiscToStoreScreen(store, cart);
             dispose();
         });
+        
         smUpdateStore.add(addBook);
         smUpdateStore.add(addCD);
         smUpdateStore.add(addDVD);
-
-        menu.add(smUpdateStore);
 
         JMenuItem viewStore = new JMenuItem("View store");
         viewStore.addActionListener(e -> {
             new StoreScreen(store, cart);
             dispose();
         });
-        menu.add(viewStore);
 
         JMenuItem viewCart = new JMenuItem("View cart");
         viewCart.addActionListener(e -> {
             new CartScreen(store, cart);
             dispose();
         });
+
+        menu.add(smUpdateStore);
+        menu.add(viewStore);
         menu.add(viewCart);
 
         JMenuBar menuBar = new JMenuBar();
@@ -110,56 +111,39 @@ public class StoreScreen extends JFrame {
     }
 
     JPanel createCenter() {
-        JPanel center = new JPanel();
-        center.setLayout(new GridLayout(3, 3, 2, 2));
+        JPanel center = new JPanel(new BorderLayout());
+        
+        JPanel form = new JPanel(new GridLayout(0, 2, 10, 10));
+        form.setBorder(BorderFactory.createEmptyBorder(20, 100, 20, 100));
+        
+        form.add(new JLabel("Title:"));
+        tfTitle = new JTextField();
+        form.add(tfTitle);
+        
+        form.add(new JLabel("Category:"));
+        tfCategory = new JTextField();
+        form.add(tfCategory);
+        
+        form.add(new JLabel("Cost ($):"));
+        tfCost = new JTextField();
+        form.add(tfCost);
+        
+        // Let subclasses append their specific fields
+        addSubclassFields(form);
+        
+        center.add(form, BorderLayout.CENTER);
 
-        ArrayList<Media> mediaInStore = store.getItemsInStore();
-        int limit = Math.min(9, mediaInStore.size());
-        for (int i = 0; i < limit; i++) {
-            MediaStore cell = new MediaStore(mediaInStore.get(i), cart);
-            center.add(cell);
-        }
+        JButton btnAdd = new JButton("Add Item");
+        btnAdd.setPreferredSize(new Dimension(150, 40));
+        btnAdd.addActionListener(e -> handleAdd());
+        
+        JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        btnPanel.add(btnAdd);
+        center.add(btnPanel, BorderLayout.SOUTH);
 
         return center;
     }
 
-    public static void main(String[] args) {
-        Store store = new Store();
-        Cart cart = new Cart();
-
-        // Thêm dữ liệu mẫu vào cửa hàng
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 124, 24.95f);
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin", "Animation", "John Musker", 90, 18.99f);
-        
-        CompactDisc cd1 = new CompactDisc(3, "The Dark Side of the Moon", "Progressive Rock", 15.99f, 43, "Alan Parsons", "Pink Floyd");
-        cd1.addTrack(new hust.soict.dsai.aims.media.Track("Speak to Me", 90));
-        cd1.addTrack(new hust.soict.dsai.aims.media.Track("Breathe", 163));
-        cd1.addTrack(new hust.soict.dsai.aims.media.Track("On the Run", 215));
-
-        CompactDisc cd2 = new CompactDisc(4, "Abbey Road", "Rock", 12.99f, 47, "George Martin", "The Beatles");
-        cd2.addTrack(new hust.soict.dsai.aims.media.Track("Come Together", 259));
-        cd2.addTrack(new hust.soict.dsai.aims.media.Track("Something", 182));
-
-        CompactDisc cd3 = new CompactDisc(5, "Thriller", "Pop", 14.99f, 42, "Quincy Jones", "Michael Jackson");
-
-        Book book1 = new Book(6, "The Lord of the Rings", "Fantasy", 25.50f);
-        book1.addAuthor("J. R. R. Tolkien");
-        Book book2 = new Book(7, "Harry Potter", "Fantasy", 19.99f);
-        book2.addAuthor("J. K. Rowling");
-        Book book3 = new Book(8, "Sherlock Holmes", "Mystery", 15.00f);
-        book3.addAuthor("Arthur Conan Doyle");
-
-        store.addMedia(dvd1);
-        store.addMedia(dvd2);
-        store.addMedia(dvd3);
-        store.addMedia(cd1);
-        store.addMedia(cd2);
-        store.addMedia(cd3);
-        store.addMedia(book1);
-        store.addMedia(book2);
-        store.addMedia(book3);
-
-        new StoreScreen(store, cart);
-    }
+    protected abstract void addSubclassFields(JPanel form);
+    protected abstract void handleAdd();
 }

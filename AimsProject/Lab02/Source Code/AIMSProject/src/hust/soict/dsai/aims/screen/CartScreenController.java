@@ -7,16 +7,29 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.transformation.FilteredList;
+import javafx.collections.ListChangeListener;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
+import javax.swing.SwingUtilities;
+
 import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.store.Store;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.media.Playable;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.CompactDisc;
+import hust.soict.dsai.aims.media.Track;
 
 public class CartScreenController {
+    private Store store;
     private Cart cart;
+    private CartScreen stage;
     private FilteredList<Media> filteredList;
 
     @FXML
@@ -46,9 +59,14 @@ public class CartScreenController {
     @FXML
     private RadioButton radioBtnFilterTitle;
 
-    public CartScreenController(Cart cart) {
+    @FXML
+    private Label lblTotalCost;
+
+    public CartScreenController(Store store, Cart cart, CartScreen stage) {
         super();
+        this.store = store;
         this.cart = cart;
+        this.stage = stage;
     }
 
     @FXML
@@ -102,6 +120,12 @@ public class CartScreenController {
                 }
             }
         });
+
+        // Update total cost and listen for changes
+        updateTotalCost();
+        this.cart.getItemsOrdered().addListener((ListChangeListener<Media>) c -> {
+            updateTotalCost();
+        });
     }
 
     void updateButtonBar(Media media) {
@@ -119,6 +143,90 @@ public class CartScreenController {
         cart.removeMedia(media);
     }
 
+    @FXML
+    void btnPlayPressed(ActionEvent event) {
+        Media media = tblMedia.getSelectionModel().getSelectedItem();
+        if (media instanceof Playable) {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Play Media");
+            alert.setHeaderText("Playing: " + media.getTitle());
+            
+            StringBuilder sb = new StringBuilder();
+            if (media instanceof DigitalVideoDisc) {
+                DigitalVideoDisc dvd = (DigitalVideoDisc) media;
+                sb.append("Category: ").append(dvd.getCategory()).append("\n");
+                sb.append("Director: ").append(dvd.getDirector()).append("\n");
+                sb.append("Length: ").append(dvd.getLength()).append(" minutes");
+            } else if (media instanceof CompactDisc) {
+                CompactDisc cd = (CompactDisc) media;
+                sb.append("Artist: ").append(cd.getArtist()).append("\n");
+                sb.append("Category: ").append(cd.getCategory()).append("\n");
+                sb.append("Length: ").append(cd.getLength()).append(" seconds\n\n");
+                sb.append("Tracks:\n");
+                if (cd.getTracks().isEmpty()) {
+                    sb.append(" - No tracks available");
+                } else {
+                    for (Track track : cd.getTracks()) {
+                        sb.append(" - ").append(track.getTitle()).append(" (").append(track.getLength()).append("s)\n");
+                    }
+                }
+            }
+            alert.setContentText(sb.toString());
+            alert.showAndWait();
+        }
+    }
+
+    @FXML
+    void btnPlaceOrderPressed(ActionEvent event) {
+        if (cart.getItemsOrdered().isEmpty()) {
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Empty Cart");
+            alert.setHeaderText(null);
+            alert.setContentText("Your cart is empty! Cannot place order.");
+            alert.showAndWait();
+            return;
+        }
+
+        cart.empty();
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Order Success");
+        alert.setHeaderText(null);
+        alert.setContentText("Your order has been placed successfully!");
+        alert.showAndWait();
+    }
+
+    @FXML
+    void menuViewStorePressed(ActionEvent event) {
+        SwingUtilities.invokeLater(() -> {
+            new StoreScreen(store, cart);
+            stage.dispose();
+        });
+    }
+
+    @FXML
+    void menuAddBookPressed(ActionEvent event) {
+        SwingUtilities.invokeLater(() -> {
+            new AddBookToStoreScreen(store, cart);
+            stage.dispose();
+        });
+    }
+
+    @FXML
+    void menuAddCDPressed(ActionEvent event) {
+        SwingUtilities.invokeLater(() -> {
+            new AddCompactDiscToStoreScreen(store, cart);
+            stage.dispose();
+        });
+    }
+
+    @FXML
+    void menuAddDVDPressed(ActionEvent event) {
+        SwingUtilities.invokeLater(() -> {
+            new AddDigitalVideoDiscToStoreScreen(store, cart);
+            stage.dispose();
+        });
+    }
+
     void showFilteredMedia(String newValue) {
         if (newValue == null || newValue.trim().isEmpty()) {
             filteredList.setPredicate(media -> true);
@@ -130,5 +238,9 @@ public class CartScreenController {
         } else if (radioBtnFilterTitle.isSelected()) {
             filteredList.setPredicate(media -> media.getTitle() != null && media.getTitle().toLowerCase().contains(filterText));
         }
+    }
+
+    void updateTotalCost() {
+        lblTotalCost.setText(String.format("%.2f $", cart.totalCost()));
     }
 }
