@@ -1,5 +1,6 @@
 package hust.soict.dsai.aims.screen;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -66,5 +67,11 @@ public class CartScreenController {
         } else {
             btnPlay.setVisible(false);
         }
+    }
+
+    @FXML
+    void btnRemovePressed(ActionEvent event) {
+        Media media = tblMedia.getSelectionModel().getSelectedItem();
+        cart.removeMedia(media);
     }
 }
