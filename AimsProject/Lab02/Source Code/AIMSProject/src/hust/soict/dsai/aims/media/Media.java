@@ -44,8 +44,21 @@ public abstract class Media {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Media media = (Media) o;
-        return title != null && title.equalsIgnoreCase(media.title);
+        try {
+            if (o == null) {
+                throw new NullPointerException("The object to compare is null.");
+            }
+            if (!(o instanceof Media)) {
+                throw new ClassCastException("The object to compare is not an instance of Media.");
+            }
+            Media media = (Media) o;
+            if (this.title == null || media.getTitle() == null) {
+                return false;
+            }
+            return this.title.equalsIgnoreCase(media.getTitle());
+        } catch (NullPointerException | ClassCastException e) {
+            System.err.println("Error comparing Media objects: " + e.getMessage());
+            return false;
+        }
     }
 }
