@@ -1,6 +1,7 @@
 package hust.soict.dsai.aims;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 import hust.soict.dsai.aims.cart.Cart;
 import hust.soict.dsai.aims.exception.LimitExceededException;
@@ -120,7 +121,16 @@ public class Aims {
                             try {
                                 ((Playable) media3).play();
                             } catch (PlayerException e) {
-                                System.err.println("ERROR: " + e.getMessage());
+                                System.err.println("PlayerException: " + e.getMessage());
+                                System.err.println("Exception details: " + e.toString());
+                                e.printStackTrace();
+                                String dialogTitle = "Player Error";
+                                if (media3 instanceof DigitalVideoDisc) {
+                                    dialogTitle = "Illegal DVD Length";
+                                } else if (media3 instanceof CompactDisc) {
+                                    dialogTitle = "Illegal CD Length";
+                                }
+                                JOptionPane.showMessageDialog(null, e.getMessage(), dialogTitle, JOptionPane.ERROR_MESSAGE);
                             }
                         } else {
                             System.out.println("This media cannot be played.");
@@ -168,7 +178,16 @@ public class Aims {
                         try {
                             ((Playable) media).play();
                         } catch (PlayerException e) {
-                            System.err.println("ERROR: " + e.getMessage());
+                            System.err.println("PlayerException: " + e.getMessage());
+                            System.err.println("Exception details: " + e.toString());
+                            e.printStackTrace();
+                            String dialogTitle = "Player Error";
+                            if (media instanceof DigitalVideoDisc) {
+                                dialogTitle = "Illegal DVD Length";
+                            } else if (media instanceof CompactDisc) {
+                                dialogTitle = "Illegal CD Length";
+                            }
+                            JOptionPane.showMessageDialog(null, e.getMessage(), dialogTitle, JOptionPane.ERROR_MESSAGE);
                         }
                     } else {
                         System.out.println("Invalid choice.");
@@ -294,7 +313,16 @@ public class Aims {
                             try {
                                 ((Playable) mediaToPlay).play();
                             } catch (PlayerException e) {
-                                System.err.println("ERROR: " + e.getMessage());
+                                System.err.println("PlayerException: " + e.getMessage());
+                                System.err.println("Exception details: " + e.toString());
+                                e.printStackTrace();
+                                String dialogTitle = "Player Error";
+                                if (mediaToPlay instanceof DigitalVideoDisc) {
+                                    dialogTitle = "Illegal DVD Length";
+                                } else if (mediaToPlay instanceof CompactDisc) {
+                                    dialogTitle = "Illegal CD Length";
+                                }
+                                JOptionPane.showMessageDialog(null, e.getMessage(), dialogTitle, JOptionPane.ERROR_MESSAGE);
                             }
                         } else {
                             System.out.println("This media cannot be played.");

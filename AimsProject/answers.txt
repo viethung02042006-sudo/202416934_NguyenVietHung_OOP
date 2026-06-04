@@ -52,3 +52,8 @@ A4: Ta sẽ không dùng Comparable của Media nữa. Thay vào đó, ta tạo 
    - Tính chất:
      + AWT Components là "heavyweight" (phụ thuộc vào các thành phần đồ họa của hệ điều hành gốc). Do đó, giao diện hiển thị của ứng dụng AWT sẽ thay đổi tùy thuộc vào hệ điều hành chạy ứng dụng (Windows, macOS, Linux) và bị hạn chế về khả năng tùy chỉnh.
      + Swing Components là "lightweight" (được viết và vẽ hoàn toàn bằng Java). Giao diện của Swing hoạt động đồng nhất trên mọi nền tảng, hỗ trợ cơ chế thay đổi giao diện linh hoạt (Pluggable Look and Feel) và cho phép các thành phần chồng đè lên nhau một cách mượt mà.
+
+--- Part 14: Update the Aims class ---
+
+Q: What happens when you don't update for them to catch?
+A: Vì PlayerException là một "checked exception" (kế thừa trực tiếp từ java.lang.Exception), trình biên dịch Java sẽ báo lỗi biên dịch (compilation error) nếu chúng ta gọi phương thức play() mà không bắt (catch) nó bằng khối try-catch hoặc không khai báo ném tiếp (throws PlayerException) ở chữ ký phương thức chứa lời gọi đó. Nếu là unchecked exception (kế thừa RuntimeException) mà không bắt, chương trình sẽ gặp lỗi crash/ngắt đột ngột tại thời điểm chạy (runtime) nếu xảy ra ngoại lệ.
