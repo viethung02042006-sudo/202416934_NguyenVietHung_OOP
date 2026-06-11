@@ -28,3 +28,6 @@ out/
 .idea/workspace.xml
 .idea/shelf/
 .idea/copilot/
+
+# JavaFX SDK
+javafx-sdk-21.0.2/
